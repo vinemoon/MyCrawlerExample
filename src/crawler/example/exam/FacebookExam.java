@@ -20,31 +20,27 @@ import org.jsoup.select.Elements;
 public class FacebookExam {
 	
 	public static void main(String[] args) {
-		
-		// 遠端資料路徑
 
-		String uri = 
-				"https://graph.facebook.com/v2.6"
-				+ "/search?q="
-				+ "&access_token=";
-
+		String uri =
+				"https://graph.facebook.com/v2.8"
+						+ "/search?q=%E5%91%8A%E7%99%BD&type=page&limit=1000&fields=name,id,fan_count,talking_about_count"
+						+ "&access_token=EAACEdEose0cBADAmVHdSRgFtZA5rXnnZCkZC6jTepXaxS5N7Di4YwMmEBs1qFIsWOX2SElFONdXIsBgRMRPeW41bDIlvyyiNTi3egrPTHWeadndFg3wnXpEuTrZBr8LdF8REDVf0saniVmZBH6pLwkmBelVewKJ09waqiDZAeqD4ZCfWOH8u41m";
 
 		Elements elems =
 				CrawlerPack.start()
-				.getFromJson(uri)
-				.select("data");
-		
-		String output = "id,reactions";
+						.getFromJson(uri)
+						.select("data");
+
+		String output = "id,名稱,按讚數,討論人數\n";
 
 		// 遂筆處理
 		for( Element data: elems ){
 			String id = data.select("id").text();
+			String name = data.select("name").text();
+			String likes = data.select("fan_count").text();
+			String talking_about_count = data.select("talking_about_count").text();
 
-			// FIXIT
-			String reactions = "";
-
-
-			output += id + "," + reactions + "\n";
+			output += id+",\""+name+"\","+likes+","+talking_about_count+"\n";
 		}
 
 		System.out.println( output );
