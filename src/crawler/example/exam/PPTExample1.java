@@ -37,8 +37,11 @@ public class PPTExample1 {
 			    
 			    // 這兒開始是 Jsoup Document 物件操作
 
-				.select("div.push>span.hl.push-tag,span.f3.hl.push-userid")
-				//.select("#main > div.content > h1")
+				//.select("div.push>span.hl.push-tag,span.f3.hl.push-userid")
+				.select("div.push:contains(推)")
+
+
+
 
 
 		);

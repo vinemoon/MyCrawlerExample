@@ -21,8 +21,8 @@ public class BasicExample {
 		CrawlerPack.setLoggerLevel(SimpleLog.LOG_LEVEL_OFF);
 
 		// 遠端資料路徑
-		String uri = "http://.../";
-
+		String uri = "https://udn.com/news/story/5/2390631";
+		//String uri = "http://news.ltn.com.tw/news/life/paper/1092476";
 		System.out.println(
 				CrawlerPack.start()
 				
@@ -31,13 +31,15 @@ public class BasicExample {
 				//.setRemoteEncoding("big5")// 設定遠端資料文件編碼
 				
 				// 選擇資料格式 (三選一)
-				.getFromJson(uri)
-			    //.getFromHtml(uri)
+				//.getFromJson(uri)
+			    .getFromHtml(uri)
 			    //.getFromXml(uri)
 			    
 			    // 這兒開始是 Jsoup Document 物件操作
-			    .select(".css .selector ")
-			    
+				.select("#story_body_content > figure > a:nth-child(1) > img")
+				//.select("#main > div.content > h1")
+
+
 		);
 	}
 }
