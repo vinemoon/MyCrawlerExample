@@ -3,11 +3,8 @@ package crawler.example.exam;
 import com.github.abola.crawler.CrawlerPack;
 import org.apache.commons.logging.impl.SimpleLog;
 import org.jsoup.select.Elements;
-import sun.text.normalizer.RangeValueIterator;
 
 
-
-import static sun.plugin.javascript.navig.JSType.Element;
 
 /**
  * 爬蟲包程式的全貌，就只有這固定的模式
