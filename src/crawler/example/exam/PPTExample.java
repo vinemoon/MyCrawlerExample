@@ -20,7 +20,7 @@ public class PPTExample {
 		// turn off logging
 		CrawlerPack.setLoggerLevel(SimpleLog.LOG_LEVEL_OFF);
 
-		// 遠端資料路徑
+		// 遠端資料路徑//
 		String uri = "https://www.ptt.cc/bbs/Gossiping/M.1491703259.A.E2A.html";
 		//String uri = "http://news.ltn.com.tw/news/life/paper/1092476";
 		System.out.println(
