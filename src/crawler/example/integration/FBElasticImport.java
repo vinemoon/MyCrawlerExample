@@ -7,14 +7,14 @@ import org.jsoup.select.Elements;
  * Created by Abola Lee on 2016/7/10.
  */
 public class FBElasticImport {
-//
+
     static String elasticHost = "192.168.152.152" ;
     static String elasticPort = "9200" ;
     static String elasticIndex = "fb";
     static String elasticIndexType = "data";
     static String pageName = "howfunofficial";
     static long start = 1491696000;
-    static int days = 30;
+    static int days = 7;
 
     public static void main(String[] args) {
         for (long datatime = start ; datatime > start-86400*days ;datatime-=3600*8) {
