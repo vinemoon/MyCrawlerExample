@@ -1,3 +1,5 @@
+package crawler.example.integration;
+
 import com.github.abola.crawler.CrawlerPack;
 import com.mashape.unirest.http.Unirest;
 import org.jsoup.nodes.Element;
